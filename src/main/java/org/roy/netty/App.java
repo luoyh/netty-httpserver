@@ -1,7 +1,6 @@
 package org.roy.netty;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.concurrent.TimeUnit;
 
 import io.netty.bootstrap.Bootstrap;
@@ -27,6 +26,7 @@ import io.netty.handler.codec.http.HttpRequestEncoder;
 import io.netty.handler.codec.http.HttpResponse;
 import io.netty.handler.codec.http.HttpResponseDecoder;
 import io.netty.handler.codec.http.HttpVersion;
+import io.netty.util.CharsetUtil;
 
 /**
  * Hello world!
@@ -104,7 +104,7 @@ public class App {
             if (msg instanceof HttpContent) {
                 HttpContent content = (HttpContent) msg;
                 ByteBuf buf = content.content();
-                System.out.println(buf.toString(io.netty.util.CharsetUtil.UTF_8));
+                System.out.println(buf.toString(CharsetUtil.UTF_8));
                 buf.release();
             }
         }

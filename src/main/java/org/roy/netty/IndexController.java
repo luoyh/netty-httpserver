@@ -16,7 +16,10 @@ public class IndexController {
     }
 
     @Rest("/welcome")
-    public R<String> wel(int id, String name) {
+    public R<String> wel(Integer id, String name) {
+        if (null == id) {
+            return R.<String>builder().code(R.ERR).msg("id must be not null").build();
+        }
         return R.<String>builder().code(id).msg(name).build();
     }
 

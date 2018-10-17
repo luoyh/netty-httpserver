@@ -12,8 +12,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- before v2.8.11.1 have securityvulnerability @see CVE-2018-7489 
 		<jackson.version>2.8.10</jackson.version>
 		<jackson.annotations.version>2.8.0</jackson.annotations.version>
+		-->
+		<jackson.version>2.9.7</jackson.version>
+		<jackson.annotations.version>2.9.7</jackson.annotations.version>
 	</properties>
 
 	<dependencies>
